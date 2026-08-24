@@ -1,0 +1,62 @@
+get:
+  tags:
+    - Users
+
+  summary: List users
+
+  description: Returns a paginated list of users.
+
+  operationId: listUsers
+
+  parameters:
+    - $ref: ../components/parameters/page.yaml
+    - $ref: ../components/parameters/size.yaml
+
+  responses:
+    "200":
+      description: Users retrieved successfully.
+
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/user-page.yaml
+
+    "400":
+      $ref: ../components/responses/bad-request.yaml
+
+    "500":
+      $ref: ../components/responses/internal-error.yaml
+
+post:
+  tags:
+    - Users
+
+  summary: Create a user
+
+  operationId: createUser
+
+  requestBody:
+    required: true
+
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/create-user-request.yaml
+
+  responses:
+    "201":
+      description: User created successfully.
+
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/user.yaml
+
+    "400":
+      $ref: ../components/responses/bad-request.yaml
+
+    "409":
+      $ref: ../components/responses/conflict.yaml
+
+    "500":
+      $ref: ../components/responses/internal-error.yaml

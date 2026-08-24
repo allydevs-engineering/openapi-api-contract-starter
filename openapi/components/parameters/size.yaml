@@ -1,0 +1,10 @@
+name: size
+in: query
+description: Maximum number of items returned per page.
+required: false
+
+schema:
+  type: integer
+  minimum: 1
+  maximum: 100
+  default: 20

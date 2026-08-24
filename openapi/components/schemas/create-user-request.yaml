@@ -1,0 +1,19 @@
+type: object
+required:
+  - email
+  - name
+
+properties:
+  email:
+    type: string
+    format: email
+    maxLength: 254
+    description: Email address for the new user.
+    example: jane.doe@example.com
+
+  name:
+    type: string
+    minLength: 1
+    maxLength: 100
+    description: Display name for the new user.
+    example: Jane Doe

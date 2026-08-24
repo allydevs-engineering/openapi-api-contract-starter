@@ -1,0 +1,25 @@
+get:
+  tags:
+    - Users
+
+  summary: Get user by ID
+
+  operationId: getUserById
+
+  parameters:
+    - $ref: ../components/parameters/user-id.yaml
+
+  responses:
+    "200":
+      description: User retrieved successfully.
+
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/user.yaml
+
+    "404":
+      $ref: ../components/responses/not-found.yaml
+
+    "500":
+      $ref: ../components/responses/internal-error.yaml
