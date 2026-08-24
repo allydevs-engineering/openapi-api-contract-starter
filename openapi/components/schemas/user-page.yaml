@@ -1,0 +1,14 @@
+type: object
+required:
+  - items
+  - page
+
+properties:
+  items:
+    type: array
+    description: Users in the current page
+    items:
+      $ref: ./user.yaml
+
+  page:
+    $ref: ./page-metadata.yaml

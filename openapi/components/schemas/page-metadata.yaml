@@ -1,0 +1,31 @@
+type: object
+required:
+  - page
+  - size
+  - totalElements
+  - totalPages
+
+properties:
+  page:
+    type: integer
+    minimum: 0
+    description: Zero-based page number
+    example: 0
+
+  size:
+    type: integer
+    minimum: 1
+    description: Number of items requested per page
+    example: 20
+
+  totalElements:
+    type: integer
+    minimum: 0
+    description: Total number of matching items
+    example: 125
+
+  totalPages:
+    type: integer
+    minimum: 0
+    description: Total number of available pages
+    example: 7
