@@ -1,0 +1,33 @@
+{
+  "name": "openapi-api-contract-starter",
+  "version": "1.0.0",
+  "description": "A practical OpenAPI-first foundation for designing, documenting, and validating HTTP API contracts.",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "clean": "shx rm -rf dist",
+    "bundle": "redocly bundle openapi/openapi.yaml --output dist/openapi.bundle.yaml",
+    "swagger:assets": "shx cp -r node_modules/swagger-ui-dist dist/swagger && shx cp swagger-ui/swagger-initializer.js dist/swagger/swagger-initializer.js",
+    "build:docs": "npm run clean && npm run bundle && npm run swagger:assets && shx cp dist/openapi.bundle.yaml dist/swagger/openapi.yaml",
+    "docs": "npm run build:docs && http-server dist/swagger -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com-ally-devs:/allydevs-engineering/openapi-api-contract-starter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "@redocly/cli": "^2.47.0",
+    "http-server": "^14.1.1",
+    "shx": "^0.4.0"
+  },
+  "dependencies": {
+    "swagger-ui-dist": "^5.32.14"
+  },
+  "allowScripts": {
+    "@scarf/scarf@1.4.0": true
+  }
+}
