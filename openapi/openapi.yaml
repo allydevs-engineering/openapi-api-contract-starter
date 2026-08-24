@@ -1,0 +1,20 @@
+openapi: 3.1.2
+
+info:
+  title: OpenAPI API Contract Starter
+  version: 0.1.0
+  description: |
+    A practical, modular OpenAPI foundation for designing
+    and evolving HTTP API contracts.
+
+servers:
+  - url: http://localhost:8080
+    description: Local development
+
+tags:
+  - name: Health
+    description: Service health operations
+
+paths:
+  /health:
+    $ref: ./paths/health.yaml
