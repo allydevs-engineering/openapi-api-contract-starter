@@ -1,0 +1,12 @@
+description: The authenticated client does not have permission to perform this operation.
+
+content:
+  application/problem+json:
+    schema:
+      $ref: ../schemas/problem.yaml
+
+    example:
+      type: https://api.example.com/problems/forbidden
+      title: Access denied
+      status: 403
+      detail: You do not have permission to perform this operation.

@@ -1,0 +1,12 @@
+description: The request conflicts with the current state of the resource.
+
+content:
+  application/problem+json:
+    schema:
+      $ref: ../schemas/problem.yaml
+
+    example:
+      type: https://api.example.com/problems/conflict
+      title: Resource conflict
+      status: 409
+      detail: A resource with the supplied value already exists.

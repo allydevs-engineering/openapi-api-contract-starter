@@ -1,0 +1,12 @@
+description: An unexpected error occurred while processing the request.
+
+content:
+  application/problem+json:
+    schema:
+      $ref: ../schemas/problem.yaml
+
+    example:
+      type: https://api.example.com/problems/internal-error
+      title: Internal server error
+      status: 500
+      detail: An unexpected error occurred.

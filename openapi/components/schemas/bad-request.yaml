@@ -1,0 +1,15 @@
+description: The request could not be processed.
+
+content:
+  application/problem+json:
+    schema:
+      $ref: ../schemas/validation-error.yaml
+
+    example:
+      type: https://api.example.com/problems/validation-error
+      title: Request validation failed
+      status: 400
+      detail: One or more fields contain invalid values.
+      errors:
+        - detail: must be a valid email address
+          pointer: /email

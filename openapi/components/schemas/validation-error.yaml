@@ -1,0 +1,27 @@
+allOf:
+  - $ref: ./problem.yaml
+
+  - type: object
+    required:
+      - errors
+
+    properties:
+      errors:
+        type: array
+        description: Individual validation errors.
+
+        items:
+          type: object
+          required:
+            - detail
+
+          properties:
+            detail:
+              type: string
+              description: Human-readable description of the validation issue.
+              example: must be a valid email address
+
+            pointer:
+              type: string
+              description: JSON Pointer identifying the invalid value.
+              example: /email
