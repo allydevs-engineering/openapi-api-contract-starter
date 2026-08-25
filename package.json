@@ -6,9 +6,11 @@
   "private": true,
   "scripts": {
     "clean": "shx rm -rf dist",
-    "bundle": "redocly bundle openapi/openapi.yaml --output dist/openapi.bundle.yaml",
     "lint": "redocly lint api-contract@v1",
     "validate": "npm run lint",
+    "bundle": "redocly bundle openapi/openapi.yaml --output dist/openapi.bundle.yaml",
+    "test:contract": "npm run lint && npm run bundle",
+    "test": "npm run test:contract",
     "swagger:assets": "shx cp -r node_modules/swagger-ui-dist dist/swagger && shx cp swagger-ui/swagger-initializer.js dist/swagger/swagger-initializer.js",
     "build:docs": "npm run clean && npm run bundle && npm run swagger:assets && shx cp dist/openapi.bundle.yaml dist/swagger/openapi.yaml",
     "docs": "npm run build:docs && http-server dist/swagger -c-1"
