@@ -1,0 +1,6 @@
+extends:
+  - recommended
+
+apis:
+  api-contract@v1:
+    root: ./openapi/openapi.yaml

@@ -20,15 +20,38 @@ This project demonstrates a modular approach to API contract design with reusabl
 ## Project structure
 
 ```text
-openapi/
-  paths/
-  components/
-    schemas/
-    responses/
-    parameters/
-    security/
-
-docs/
-examples/
-tests/
+├── README.md
+├── openapi
+│   ├── components
+│   │   ├── parameters
+│   │   │   ├── page.yaml
+│   │   │   ├── size.yaml
+│   │   │   └── user-id.yaml
+│   │   ├── responses
+│   │   │   ├── bad-request.yaml
+│   │   │   ├── conflict.yaml
+│   │   │   ├── forbidden.yaml
+│   │   │   ├── internal-error.yaml
+│   │   │   ├── not-found.yaml
+│   │   │   └── unauthorized.yaml
+│   │   ├── schemas
+│   │   │   ├── create-user-request.yaml
+│   │   │   ├── health-response.yaml
+│   │   │   ├── page-metadata.yaml
+│   │   │   ├── problem.yaml
+│   │   │   ├── user-page.yaml
+│   │   │   ├── user.yaml
+│   │   │   └── validation-error.yaml
+│   │   └── security
+│   │       └── bearer-auth.yaml
+│   ├── openapi.yaml
+│   └── paths
+│       ├── health.yaml
+│       ├── user-by-id.yaml
+│       └── users.yaml
+├── package-lock.json
+├── package.json
+├── redocly.yaml
+└── swagger-ui
+    └── swagger-initializer.js
 ```

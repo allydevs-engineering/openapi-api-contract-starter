@@ -6,11 +6,24 @@ info:
   description: |
     A practical, modular OpenAPI foundation for designing
     and evolving HTTP API contracts.
-
+  license:
+    name: MIT
+    identifier: MIT
 servers:
-  - url: http://localhost:8080
+  - url: https://{environment}.api.your-domain.com
     description: Local development
-
+    variables:
+      environment:
+        default: dev
+        enum:
+          - dev
+          - staging
+          - production
+        description: Target API server
+components:
+  securitySchemes:
+    bearerAuth:
+      $ref: ./components/security/bearer-auth.yaml
 tags:
   - name: Health
     description: Service health operations
@@ -24,3 +37,6 @@ paths:
 
   /users/{userId}:
     $ref: ./paths/user-by-id.yaml
+
+security:
+  - bearerAuth: []

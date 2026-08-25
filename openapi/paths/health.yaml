@@ -14,3 +14,8 @@ get:
         application/json:
           schema:
             $ref: ../components/schemas/health-response.yaml
+    "404":
+      $ref: ../components/responses/not-found.yaml
+
+    "500":
+      $ref: ../components/responses/internal-error.yaml
