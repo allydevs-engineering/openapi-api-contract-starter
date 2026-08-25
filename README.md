@@ -200,6 +200,12 @@ Typical workflow:
 6. Keep the implementation aligned with the contract
 ```
 
+## Versioning
+
+API contract changes follow Semantic Versioning.
+
+See [API_VERSIONING.md](./API_VERSIONING.md) for the change and compatibility policy.
+
 ## Contributing
 
 Contributions, improvements and discussions are welcome.
